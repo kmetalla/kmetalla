@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\keidi\source\repos\Snake\main.cpp(42,35): warning C4018: '<': signed/unsigned mismatch
+C:\Users\keidi\source\repos\Snake\main.cpp(69,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Snake.vcxproj -> C:\Users\keidi\source\repos\Snake\Debug\Snake.exe
