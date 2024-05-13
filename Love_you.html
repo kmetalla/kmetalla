@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Countdown</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #fde8e8;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    header {
+      background-color: #ffcccc;
+      padding: 20px 0;
+    }
+
+    header h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 48px;
+      color: #ff3366;
+      margin: 0;
+    }
+
+    main {
+      margin-top: 50px;
+    }
+
+    .heart {
+      background-image: url('heart.png');
+      width: 150px;
+      height: 150px;
+      background-size: cover;
+      margin-bottom: 20px;
+    }
+
+    #countdown {
+      font-size: 36px;
+      color: #ff3366;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #ff3366;
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Love Countdown</h1>
+    </header>
+
+    <main>
+      <div class="heart"></div>
+      <div id="countdown"></div>
+      <p>Countdown until we meet again ❤️</p>
+    </main>
+  </div>
+
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("May 27, 2024 14:30:00").getTime();
+
+    // Update the countdown every 1 second
+    var x = setInterval(function() {
+
+      // Get the current date and time
+      var now = new Date().getTime();
+
+      // Calculate the distance between now and the countdown date
+      var distance = countDownDate - now;
+
+      // Calculate days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the countdown
+      document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+
+      // If the countdown is over, display a message
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
